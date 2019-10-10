@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous"
+			type="text/css"
+		/>
+		<script src="jquery-3.4.0.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/css"></script>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<link rel="stylesheet" href="adminstyle.css " type="text/css" />
+	</head>
+
+	<div class="container">
+		<div class="row justify-content-center align-items-center" style="height:100vh">
+			<div class="col-6">
+				<div class="card">
+					<div class="card-body">
+						<h2 align="center">Quản lý sinh viên</h2>
+						<form id="regist" name="regist" method="post" action="/regist">
+							<div class="form-group">
+								<label>Username</label>
+								<input type="text" name="username" class="form-control" placeholder="Username" />
+							</div>
+
+							<div class="form-group">
+								<label>Password</label>
+								<input type="password" name="password" class="form-control" placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label>Confirm Password</label>
+								<input type="password" name="confirmpassword" class="form-control" placeholder="Confirm password" />
+							</div>
+
+							<div class="form-group">
+								<label>First name</label>
+								<input type="text" name="firstname" class="form-control" placeholder="Firstname" />
+							</div>
+
+							<div class="form-group">
+								<label>Last name</label>
+								<input type="text" name="lastname" class="form-control" placeholder="Lastname" />
+							</div>
+
+							<div class="form-group">
+								<label>Date Of Birth</label>
+								<input type="text" name="dob" class="form-control" placeholder="Date Of Birth" />
+							</div>
+
+							<div class="form-group">
+								<label>Place Of Birth</label>
+								<input type="text" name="pob" class="form-control" placeholder="Place Of Birth" />
+							</div>
+
+							<div class="form-group">
+								<label>Gender</label>
+								<input type="text" name="gender" class="form-control" placeholder="Gender" />
+							</div>
+							<div style="text-align: center">
+								<button type="submit" id="submit" name="submit" class="btn btn-success">Sign up</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>

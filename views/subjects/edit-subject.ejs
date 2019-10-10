@@ -1,0 +1,22 @@
+<%- include("../includes/head.ejs") %>
+<%- include("../includes/navigation.ejs") %>
+<div class="container">
+        <form action="/edit-subject/<%=subject.id%>" method="post">
+                <h5>Tên môn học</h5>
+                <input type="text" name="name" value="<%=subject.name%>" class="form-control"><br>
+                <h5>Số tín chỉ</h5>
+                <input type="text" name="noc" value="<%=subject.noc%>" class="form-control"><br>
+                <h5>Phần trăm điểm danh</h5>
+                <input type="text" name="pod" value="<%=subject.pod%>" class="form-control"><br>
+                <h5>Phần trăm kiểm tra</h5>
+                <input type="text" name="pot" value="<%=subject.pot%>" class="form-control"><br>
+                <h5>Phần trăm bài tập</h5>
+                <input type="text" name="poe" value="<%=subject.poe%>" class="form-control"><br>
+                <h5>Phần trăm thực hành</h5>
+                <input type="text" name="pop" value="<%=subject.pop%>" class="form-control"><br>
+                <h5>Phần trăm cuối kì</h5> 
+                <input type="text" name="pofe" value="<%=subject.pofe%>" class="form-control"><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>
+<%- include("../includes/end.ejs") %>

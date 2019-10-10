@@ -1,35 +1,53 @@
 const express = require('express');
 const parser = require('body-parser');
+const session = require('express-session');
 const path = require('path');
 const app = express();
-const studentRoutes = require('./routes/student');
+const router = express.Router();
+// import sequelize
+
+const sequelize = require('./ultil/database');
+
+// import Route
+const userRoutes = require('./routes/user');
 const subjectRoutes = require('./routes/subject');
-
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-
+const home = require('./routes/home');
+const auth = require('./routes/auth');
+const chart = require('./routes/chart');
+// body parse
 app.use(parser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(studentRoutes);
+//passport
+
+// ejs
+app.set('view engine', 'ejs');
+app.set('views', 'views');
+
+// model
+const User = require('./models/user');
+
+// route
 app.use(subjectRoutes);
+app.use(userRoutes);
+app.use(auth);
+app.use(chart);
+app.use(home);
 
-// var mysql = require('mysql');
+app.use('/', (req, res) => {
+	res.render('auth/login');
+});
+// sync database
 
-// var con = mysql.createConnection({
-// 	host: 'localhost',
-// 	user: 'root',
-// 	password: '',
-// 	database: 'student_manage_php'
-// });
-
-// con.connect(function(err) {
-//     if (err) throw err;
-//     con.query('SELECT fullname, dob, pob, gender FROM tblaccount WHERE role!="admin"', function(err, result, fields) {
-//         if (err) throw err;
-//         console.log(result);
-//     });
-// });
+sequelize
+	.sync()
+	.then()
+	.catch(error => console.log(error));
 
 app.listen(8080);
+
+// var server = http.createServer(app).listen(port, function() {
+// 	console.log('Express server listening ' + port);
+// });
+
+// server.on('error', function(err) {});
